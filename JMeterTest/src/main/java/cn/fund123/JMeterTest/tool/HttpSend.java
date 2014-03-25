@@ -74,8 +74,8 @@ public class HttpSend {
 						Map<String, String> dataMap = gson.fromJson(decmsg,
 								new TypeToken<Map<String, String>>() {
 								}.getType());
-						for (String key : dataMap.keySet()) {
-							log.info(key + "=" + dataMap.get(key));
+						for (Map.Entry<String, String> entry : dataMap.entrySet()) {
+							log.info(entry.getKey() + "=" + entry.getValue());
 						}
 					} catch (Exception e) {
 						log.info("<<<无法二次解析数据：" + decmsg);
